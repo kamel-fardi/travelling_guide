@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import '../app_data.dart';
 import '../widgets/category_item.dart';
@@ -20,6 +22,7 @@ class categoriesscreen extends StatelessWidget {
           crossAxisSpacing: 10,
         ),
         children: Categories_data.map(
+          // ignore: non_constant_identifier_names
           (CategoryData) => CategoryItem(
             CategoryData.id,
             CategoryData.title,

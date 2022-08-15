@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import './models/category.dart';
-//import './models/trip.dart';
+import './models/Trips.dart';
 
-const Categories_data = const [
+// ignore: constant_identifier_names
+const Categories_data = [
   Category(
     id: 'c1',
     title: 'Mountains',
@@ -40,66 +40,66 @@ const Categories_data = const [
         'https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c2tpaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
   ),
 ];
-/*
-const Trips_data = const [
+// ignore: constant_identifier_names
+const Trips_data = [
   Trip(
-    id: 'm1',
-    categories: [
-      'c1',
-    ],
-    title: 'Alps',
-    tripType: TripType.Exploration,
-    season: Season.Winter,
-    imageUrl:
-        'https://images.unsplash.com/photo-1611523658822-385aa008324c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8bW91bmF0aW5zfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-    duration: 20,
-    activities: [
-      'Visit archaeological sites',
-      'walking tour',
-      'Visiting the malls for shopping',
-      'eat lunch',
-      'Enjoy the beautiful scenery'
-    ],
-    program: [
-      'Allite, set de yosmode tempor ankidionteut laboure et dollar magna aliquia.',
-      'Wesking Allite Set Do Yosemod Tempur Ankidionteut Laborit At Dollar Magna Aliquia.',
-      'Lorem Epsom Dollars At Magna Dollars Aliquia.',
-      'Lore de Ayosemode tempor ankidionteut laboure at dollar magna alequa.',
-      'Lorem Epsom Dollar Set Amit, Constructor Adaiba Isking Alite, Set De Iosmod Tempur Ankidionteut Laborit At Dollars Magna Aliquia.',
-      'Lorem Epsom Dollar Set Amit, Tempur Ankidionteut Laborit At Dollars Magna Aliquia.',
-    ],
-    isInSummer: false,
-    isForFamilies: true,
-    isInWinter: true,
-  ),
+      id: 'm1',
+      categories: [
+        'c1',
+      ],
+      title: 'Alps',
+      tripType: TripType.Exploration,
+      season: Season.Winter,
+      imageUrl:
+          'https://images.unsplash.com/photo-1611523658822-385aa008324c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8bW91bmF0aW5zfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      duration: 20,
+      activities: [
+        'Visit archaeological sites',
+        'walking tour',
+        'Visiting the malls for shopping',
+        'eat lunch',
+        'Enjoy the beautiful scenery'
+      ],
+      program: [
+        'Allite, set de yosmode tempor ankidionteut laboure et dollar magna aliquia.',
+        'Wesking Allite Set Do Yosemod Tempur Ankidionteut Laborit At Dollar Magna Aliquia.',
+        'Lorem Epsom Dollars At Magna Dollars Aliquia.',
+        'Lore de Ayosemode tempor ankidionteut laboure at dollar magna alequa.',
+        'Lorem Epsom Dollar Set Amit, Constructor Adaiba Isking Alite, Set De Iosmod Tempur Ankidionteut Laborit At Dollars Magna Aliquia.',
+        'Lorem Epsom Dollar Set Amit, Tempur Ankidionteut Laborit At Dollars Magna Aliquia.',
+      ],
+      isInSummer: false,
+      isForFamilies: true,
+      isInWinter: true),
   Trip(
-    id: 'm2',
-    categories: [
-      'c1',
-    ],
-    title: 'Mountains of the south',
-    tripType: TripType.Exploration,
-    season: Season.Winter,
-    imageUrl:
-        'https://images.unsplash.com/photo-1612456225451-bb8d10d0131d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fG1vdW5hdGluc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-    duration: 10,
-    activities: [
-     'Visit archaeological sites',
-      'walking tour',
-      'Visiting the malls for shopping',
-      'eat lunch',
-      'Enjoy the beautiful scenery'
-    ],
-    program: [
-      'Allite, set de yosmode tempor ankidionteut laboure et dollar magna aliquia.',
-      'Wesking Allite Set Do Yosemod Tempur Ankidionteut Laborit At Dollar Magna Aliquia.',
-      'Lorem Epsom Dollars At Magna Dollars Aliquia.',
-      'Lore de Ayosemode tempor ankidionteut laboure at dollar magna alequa.',
-    ],
-    isInSummer: false,
-    isForFamilies: false,
-    isInWinter: false,
-  ),
+      id: 'm2',
+      categories: [
+        'c1',
+      ],
+      title: 'Mountains of the south',
+      tripType: TripType.Exploration,
+      season: Season.Winter,
+      imageUrl:
+          'https://images.unsplash.com/photo-1612456225451-bb8d10d0131d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjZ8fG1vdW5hdGluc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      duration: 10,
+      activities: [
+        'Visit archaeological sites',
+        'walking tour',
+        'Visiting the malls for shopping',
+        'eat lunch',
+        'Enjoy the beautiful scenery'
+      ],
+      program: [
+        'Allite, set de yosmode tempor ankidionteut laboure et dollar magna aliquia.',
+        'Wesking Allite Set Do Yosemod Tempur Ankidionteut Laborit At Dollar Magna Aliquia.',
+        'Lorem Epsom Dollars At Magna Dollars Aliquia.',
+        'Lore de Ayosemode tempor ankidionteut laboure at dollar magna alequa.',
+        'Lorem Epsom Dollar Set Amit, Constructor Adaiba Isking Alite, Set De Iosmod Tempur Ankidionteut Laborit At Dollars Magna Aliquia.',
+        'Lorem Epsom Dollar Set Amit, Tempur Ankidionteut Laborit At Dollars Magna Aliquia.',
+      ],
+      isInSummer: false,
+      isForFamilies: false,
+      isInWinter: false),
   Trip(
     id: 'm3',
     categories: [
@@ -455,7 +455,8 @@ const Trips_data = const [
       'walking tour',
       'Visiting the malls for shopping',
       'eat lunch',
-      'Enjoy the beautiful scenery'],
+      'Enjoy the beautiful scenery'
+    ],
     program: [
       'Allite, set de yosmode tempor ankidionteut laboure et dollar magna aliquia.',
       'Wesking Allite Set Do Yosemod Tempur Ankidionteut Laborit At Dollar Magna Aliquia.',
@@ -478,7 +479,7 @@ const Trips_data = const [
         'https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c2tpaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
     duration: 30,
     activities: [
-     'Visit archaeological sites',
+      'Visit archaeological sites',
       'walking tour',
       'Visiting the malls for shopping',
       'eat lunch',
@@ -523,4 +524,4 @@ const Trips_data = const [
     isForFamilies: true,
     isInWinter: true,
   ),
-];*/
+];

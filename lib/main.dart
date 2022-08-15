@@ -14,8 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Travel app',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.amber,
         textTheme: ThemeData.light().textTheme.copyWith(
               headline5: const TextStyle(
                 color: Colors.blue,
@@ -28,10 +26,14 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+            .copyWith(secondary: Colors.amber),
       ),
-      home: const categoriesscreen(),
+      //home: const categoriesscreen(),
       routes: {
-        '/category-trips': (ctx) => CategoryTripScreen(),
+        '/': (ctx) =>
+            const categoriesscreen(), //the same as home: const categoriesscreen(),
+        CategoryTripScreen.screenRoute: (ctx) => CategoryTripScreen(),
       },
     );
   }

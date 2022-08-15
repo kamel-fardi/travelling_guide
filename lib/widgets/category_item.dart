@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import '../screens/category_trips_screen.dart';
 
@@ -9,7 +11,7 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.imageUrl);
   void selectCategory(BuildContext cxt) {
     Navigator.of(cxt).pushNamed(
-      '/category-trips',
+      CategoryTripScreen.screenRoute,
       arguments: {
         'id': id,
         'title': title,
