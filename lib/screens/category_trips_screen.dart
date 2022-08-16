@@ -27,12 +27,13 @@ class CategoryTripScreen extends StatelessWidget {
     ).toList(); // test all the trips in trips_data if it containes the same catid that was passed in parameter will return true so add the trip to the finla liste
     return Scaffold(
       appBar: AppBar(
-        title: Text(CategoryTitle!),
+        title: Center(child: Center(child: Text(CategoryTitle!))),
       ),
       body: Center(
         child: ListView.builder(
           itemBuilder: (context, index) {
             return TripItem(
+                id: filteredTrips[index].id,
                 title: filteredTrips[index].title,
                 imageUrl: filteredTrips[index].imageUrl,
                 duration: filteredTrips[index].duration,

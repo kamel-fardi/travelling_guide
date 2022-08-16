@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import '../app_data.dart';
 import '../widgets/category_item.dart';
 
-class categoriesscreen extends StatelessWidget {
-  const categoriesscreen({Key? key}) : super(key: key);
+class CategoriesScreen extends StatelessWidget {
+  //const categoriesscreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('tourist guide'),
-      ),
+      /*appBar: AppBar(
+        title: Center(child: Center(child: const Text('Tourist Guide'))),
+      ),*/
       body: GridView(
         padding: EdgeInsets.all(10),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
