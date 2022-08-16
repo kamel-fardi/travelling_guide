@@ -27,10 +27,10 @@ class TripDetailScreen extends StatelessWidget {
     final selectedTrip = Trips_data.firstWhere((trip) => trip.id == tripId);
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-            child: Text(
+        centerTitle: true,
+        title: Text(
           selectedTrip.title,
-        )),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -74,7 +74,7 @@ class TripDetailScreen extends StatelessWidget {
                     ),
                     title: Text(selectedTrip.program[index]),
                   ),
-                  Divider(),
+                  const Divider(),
                 ],
               ),
               itemCount: selectedTrip.program.length,
@@ -84,6 +84,14 @@ class TripDetailScreen extends StatelessWidget {
             height: 100,
           ),
         ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.delete,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop(tripId);
+        },
       ),
     );
   }

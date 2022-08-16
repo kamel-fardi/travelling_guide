@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_guide/screens/Trip_detail_screen.dart';
-import 'package:travelling_guide/screens/tabs_screen.dart';
-import 'package:travelling_guide/screens/tabs_screen1.dart';
-import './screens/categories_screen.dart';
+import 'package:travelling_guide/screens/filters_screen.dart';
+
+import './screens/tabs_screen1.dart';
+
 import './screens/category_trips_screen.dart';
 
 void main() {
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
             const TabsScreen1(), //the same as home: const categoriesscreen(),
         CategoryTripScreen.screenRoute: (ctx) => CategoryTripScreen(),
         TripDetailScreen.screenRoute: (ctx) => TripDetailScreen(),
+        FiltersScreen.screenRoute: (ctx) => const FiltersScreen(),
       },
     );
   }

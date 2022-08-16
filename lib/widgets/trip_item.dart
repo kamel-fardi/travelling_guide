@@ -9,6 +9,7 @@ class TripItem extends StatelessWidget {
   final int duration;
   final TripType tripType;
   final Season season;
+  final Function removeItem;
   TripItem({
     required this.id,
     required this.title,
@@ -16,24 +17,20 @@ class TripItem extends StatelessWidget {
     required this.duration,
     required this.tripType,
     required this.season,
+    required this.removeItem,
   });
   String get seasonText {
     switch (season) {
       case Season.Summer:
         return 'Summer';
-        break;
       case Season.Spring:
         return 'Spring';
-        break;
       case Season.Winter:
         return 'Winter';
-        break;
       case Season.Autumn:
         return 'Autumn';
-        break;
       default:
         return 'Other';
-        break;
     }
   }
 
@@ -41,27 +38,33 @@ class TripItem extends StatelessWidget {
     switch (tripType) {
       case TripType.Activities:
         return 'Activites';
-        break;
       case TripType.Exploration:
         return 'Exploration';
-        break;
       case TripType.Recovery:
         return 'Recovery';
-        break;
       case TripType.Therapy:
         return 'Therapy';
-        break;
       default:
         return 'Other';
-        break;
     }
   }
 
   void selectTrip(BuildContext context) {
-    Navigator.of(context).pushNamed(
-      TripDetailScreen.screenRoute,
-      arguments: id,
-    );
+    Navigator.of(context)
+        .pushNamed(
+          TripDetailScreen.screenRoute,
+          arguments: id,
+        )
+        .then(
+          //then here wil containe the variable that was passed in the pop function in trip detail screen that's was a futur var
+          //this wil be exucted when the pushname is over aka the next page was closed
+          (result) => {
+            if (result != null)
+              {
+                removeItem(result),
+              }
+          },
+        );
   }
 
   @override

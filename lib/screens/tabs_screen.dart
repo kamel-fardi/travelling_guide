@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_guide/screens/categories_screen.dart';
-import '../screens/category_trips_screen.dart';
 
 import 'favorites_screen.dart';
 
@@ -13,7 +12,8 @@ class TabsScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Center(child: Text('Tourist Guide')),
+          centerTitle: true,
+          title: const Text('Tourist Guide'),
           bottom: const TabBar(tabs: [
             Tab(
               icon: Icon(Icons.dashboard),
