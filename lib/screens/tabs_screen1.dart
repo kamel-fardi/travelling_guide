@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import '../models/Trips.dart';
 import '../widgets/app_drawer.dart';
 import '../screens/favorites_screen.dart';
 
 import 'categories_screen.dart';
 
 class TabsScreen1 extends StatefulWidget {
-  const TabsScreen1({Key? key}) : super(key: key);
-
+  //const TabsScreen1({Key? key}) : super(key: key);
+  final List<Trip> selectedFavoriteTrips;
+  const TabsScreen1(this.selectedFavoriteTrips, {Key? key}) : super(key: key);
   @override
   State<TabsScreen1> createState() => _TabsScreen1State();
 }
@@ -19,16 +21,22 @@ class _TabsScreen1State extends State<TabsScreen1> {
   }
 
   int _selectedScreenIndex = 0;
-  final List<Map<String, Object?>> _screens = [
-    {
-      'Screen': CategoriesScreen(),
-      'Title': 'Trips Category',
-    },
-    {
-      'Screen': const FavoritesScreen(),
-      'Title': 'Favorites',
-    },
-  ];
+  late List<Map<String, Object?>> _screens;
+  @override
+  void initState() {
+    _screens = [
+      {
+        'Screen': const CategoriesScreen(),
+        'Title': 'Trips Category',
+      },
+      {
+        'Screen': FavoritesScreen(widget.selectedFavoriteTrips),
+        'Title': 'Favorites',
+      },
+    ];
+    super.initState();
+  }
+
   //String title = ();
   @override
   Widget build(BuildContext context) {

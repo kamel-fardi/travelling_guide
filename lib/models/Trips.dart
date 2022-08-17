@@ -1,17 +1,17 @@
-// ignore_for_file: file_names, constant_identifier_names
-
-enum Season {
-  Winter,
-  Spring,
-  Summer,
-  Autumn,
-}
+// ignore_for_file: file_names
 
 enum TripType {
-  Exploration,
-  Recovery,
-  Activities,
-  Therapy,
+  exploration,
+  recovery,
+  activities,
+  therapy,
+}
+
+enum Season {
+  winter,
+  spring,
+  summer,
+  autumn,
 }
 
 class Trip {
@@ -22,13 +22,13 @@ class Trip {
   final List<String> activities;
   final List<String> program;
   final int duration;
-  final Season season;
+  Season season;
   final TripType tripType;
-  final bool isInSummer;
-  final bool isInWinter;
-  final bool isForFamilies;
+  bool isInSummer;
+  bool isInWinter;
+  bool isForFamilies;
 
-  const Trip(
+  Trip(
       {required this.id,
       required this.categories,
       required this.title,

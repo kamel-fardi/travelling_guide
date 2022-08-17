@@ -2,17 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:travelling_guide/widgets/app_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
-  const FiltersScreen({Key? key}) : super(key: key);
   static const screenRoute = '/filters';
+  final Function saveFilters;
+  final Map<String, bool> currentFilters;
+  const FiltersScreen(this.currentFilters, this.saveFilters, {Key? key})
+      : super(key: key);
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
-  var _isInSummer = false;
-  var _isInWinter = false;
-  var _isForFamily = false;
+  var _summer = false;
+  var _winter = false;
+  var _family = false;
+  @override
+  void initState() {
+    _summer = widget.currentFilters['summer']!;
+    _winter = widget.currentFilters['winter']!;
+    _family = widget.currentFilters['family']!;
+    super.initState();
+  }
 
   Widget buildSwitchListTile(
     String title,
@@ -34,6 +44,19 @@ class _FiltersScreenState extends State<FiltersScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Filtered Trips'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              final selectedFilters = {
+                'summer': _summer,
+                'winter': _winter,
+                'family': _family,
+              };
+              widget.saveFilters(selectedFilters);
+            },
+            icon: const Icon(Icons.save),
+          )
+        ],
       ),
       drawer: const AppDrawer(),
       body: Column(
@@ -47,11 +70,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 buildSwitchListTile(
                   'Summer Trips',
                   'Show summer trips only',
-                  _isInSummer,
+                  _summer,
                   (newValue) {
                     setState(
                       () {
-                        _isInSummer = newValue;
+                        _summer = newValue;
                       },
                     );
                   },
@@ -59,11 +82,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 buildSwitchListTile(
                   'Winter Trips',
                   'Show Winter trips only',
-                  _isInWinter,
+                  _winter,
                   (newValue) {
                     setState(
                       () {
-                        _isInWinter = newValue;
+                        _winter = newValue;
                       },
                     );
                   },
@@ -71,11 +94,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 buildSwitchListTile(
                   'Family Trips',
                   'Show Family trips only',
-                  _isForFamily,
+                  _family,
                   (newValue) {
                     setState(
                       () {
-                        _isForFamily = newValue;
+                        _family = newValue;
                       },
                     );
                   },

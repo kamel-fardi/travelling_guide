@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:travelling_guide/screens/categories_screen.dart';
 
+import '../models/Trips.dart';
 import 'favorites_screen.dart';
 
 class TabsScreen extends StatelessWidget {
   //const TabsScreen({Key key}) : super(key: key);
+  final List<Trip> selectedFavoriteTrips;
+  TabsScreen(this.selectedFavoriteTrips);
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +30,10 @@ class TabsScreen extends StatelessWidget {
         ),
         body: TabBarView(children: [
           CategoriesScreen(),
-          const FavoritesScreen(),
+          FavoritesScreen(widget.selectedFavoriteTrips),
         ]),
       ),
     );
   }
 }
+*/

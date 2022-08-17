@@ -9,25 +9,26 @@ class TripItem extends StatelessWidget {
   final int duration;
   final TripType tripType;
   final Season season;
-  final Function removeItem;
-  TripItem({
+  // final Function removeItem;
+  const TripItem({
+    Key? key,
     required this.id,
     required this.title,
     required this.imageUrl,
     required this.duration,
     required this.tripType,
     required this.season,
-    required this.removeItem,
-  });
+    //required this.removeItem,
+  }) : super(key: key);
   String get seasonText {
     switch (season) {
-      case Season.Summer:
+      case Season.summer:
         return 'Summer';
-      case Season.Spring:
+      case Season.spring:
         return 'Spring';
-      case Season.Winter:
+      case Season.winter:
         return 'Winter';
-      case Season.Autumn:
+      case Season.autumn:
         return 'Autumn';
       default:
         return 'Other';
@@ -36,13 +37,13 @@ class TripItem extends StatelessWidget {
 
   String get tripTypeText {
     switch (tripType) {
-      case TripType.Activities:
+      case TripType.activities:
         return 'Activites';
-      case TripType.Exploration:
+      case TripType.exploration:
         return 'Exploration';
-      case TripType.Recovery:
+      case TripType.recovery:
         return 'Recovery';
-      case TripType.Therapy:
+      case TripType.therapy:
         return 'Therapy';
       default:
         return 'Other';
@@ -61,7 +62,7 @@ class TripItem extends StatelessWidget {
           (result) => {
             if (result != null)
               {
-                removeItem(result),
+                //removeItem(result),
               }
           },
         );

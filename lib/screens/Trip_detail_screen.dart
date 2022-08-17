@@ -3,6 +3,10 @@ import '../app_data.dart';
 
 class TripDetailScreen extends StatelessWidget {
   static const screenRoute = '/Trip-detail-screen';
+  final Function _manageFavorite;
+  final Function isFavorite;
+  const TripDetailScreen(this._manageFavorite, this.isFavorite, {Key? key})
+      : super(key: key);
   Widget buildSectionTitle(BuildContext context, String text) => Container(
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         alignment: Alignment.topLeft,
@@ -24,7 +28,7 @@ class TripDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tripId = ModalRoute.of(context)?.settings.arguments as String;
-    final selectedTrip = Trips_data.firstWhere((trip) => trip.id == tripId);
+    final selectedTrip = tripsData.firstWhere((trip) => trip.id == tripId);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -34,7 +38,7 @@ class TripDetailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          Container(
+          SizedBox(
             height: 300,
             width: double.infinity,
             child: Image.network(
@@ -86,12 +90,10 @@ class TripDetailScreen extends StatelessWidget {
         ]),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.delete,
+        onPressed: () => _manageFavorite(tripId),
+        child: Icon(
+          isFavorite(tripId) ? Icons.star : Icons.star_border,
         ),
-        onPressed: () {
-          Navigator.of(context).pop(tripId);
-        },
       ),
     );
   }
